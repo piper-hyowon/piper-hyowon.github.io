@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/piper-hyowon/static/css/main.22941023.css",
+    "main.js": "/piper-hyowon/static/js/main.d936a896.js",
+    "index.html": "/piper-hyowon/index.html",
+    "main.22941023.css.map": "/piper-hyowon/static/css/main.22941023.css.map",
+    "main.d936a896.js.map": "/piper-hyowon/static/js/main.d936a896.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22941023.css",
+    "static/js/main.d936a896.js"
+  ]
+}

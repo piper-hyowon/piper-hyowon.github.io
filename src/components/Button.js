@@ -1,8 +1,9 @@
 import React from "react";
 
-const Button = ({ name, onClick }) => {
+const Button = ({ name, onClick, type }) => {
   return (
     <button
+      type={type}
       style={{
         margin: 8,
         padding: "10px 16px",

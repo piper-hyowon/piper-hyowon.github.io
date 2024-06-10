@@ -2,7 +2,8 @@ import React, { useMemo, useRef, useState, useEffect } from "react";
 import PolygonAnnotation from "components/PolygonAnnotation";
 import { Stage, Layer, Image } from "react-konva";
 import Button from "components/Button";
-const videoSource = "./space_landscape.jpg";
+// const videoSource = "./space_landscape.jpg";
+const videoSource = "./mainImg.png"
 const wrapperStyle = {
   display: "flex",
   justifyContent: "center",
@@ -29,8 +30,8 @@ const Canvas = () => {
   const [isPolyComplete, setPolyComplete] = useState(false);
   const videoElement = useMemo(() => {
     const element = new window.Image();
-    element.width = 650;
-    element.height = 302;
+    element.width = 826.08;
+    element.height = 628.48;
     element.src = videoSource;
     return element;
     // eslint-disable-next-line react-hooks/exhaustive-deps

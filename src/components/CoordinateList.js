@@ -33,6 +33,11 @@ const CoordinateList = ({ list }) => {
           )}
         </tbody>
       </table>
+      <div>
+        {Array.isArray(list) && list.length > 0
+          ? list.map((e) => Object.values(e).join(",")).join("★")
+          : " "}
+      </div>
     </div>
   );
 };

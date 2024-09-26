@@ -8,10 +8,9 @@ import React, {
 import PolygonAnnotation from "components/PolygonAnnotation";
 import { Stage, Layer, Image } from "react-konva";
 import Button from "components/Button";
-// const videoSource = "./space_landscape.jpg";
 // const videoSource = "./mainImg.png"
-// const videoSource = "./mapChristmas.png";
-const videoSource = "./mapChristmasNoBg.png";
+const videoSource = "./mapChristmasNoBg.png"
+console.log(videoSource);
 const wrapperStyle = {
   display: "flex",
   justifyContent: "center",
@@ -50,9 +49,7 @@ const Canvas = () => {
   const videoElement = useMemo(() => {
     const element = new window.Image();
     element.width = 826.08;
-    element.height = 826.08;
-
-    // element.height = 628.48;
+    element.height = 628.48;
     element.src = videoSource;
     return element;
     // eslint-disable-next-line react-hooks/exhaustive-deps

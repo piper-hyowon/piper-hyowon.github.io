@@ -1,10 +1,17 @@
-import React, { useMemo, useRef, useState, useEffect } from "react";
+import React, {
+  useMemo,
+  useRef,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
 import PolygonAnnotation from "components/PolygonAnnotation";
 import { Stage, Layer, Image } from "react-konva";
 import Button from "components/Button";
 // const videoSource = "./space_landscape.jpg";
 // const videoSource = "./mainImg.png"
-const videoSource = "./map_christmas.png";
+// const videoSource = "./mapChristmas.png";
+const videoSource = "./mapChristmasNoBg.png";
 const wrapperStyle = {
   display: "flex",
   justifyContent: "center",
@@ -29,10 +36,23 @@ const Canvas = () => {
   const [position, setPosition] = useState([0, 0]);
   const [isMouseOverPoint, setMouseOverPoint] = useState(false);
   const [isPolyComplete, setPolyComplete] = useState(false);
+  const stageRef = useRef(null);
+
+  useEffect(() => {
+    if (stageRef.current) {
+      const stage = stageRef.current.getStage();
+      if (stage && stage.canvas) {
+        stage.canvas.willReadFrequently = true;
+      }
+    }
+  }, []);
+
   const videoElement = useMemo(() => {
     const element = new window.Image();
     element.width = 826.08;
-    element.height = 628.48;
+    element.height = 826.08;
+
+    // element.height = 628.48;
     element.src = videoSource;
     return element;
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -65,6 +85,7 @@ const Canvas = () => {
       setPoints([...points, mousePos]);
     }
   };
+
   const handleMouseMove = (e) => {
     const stage = e.target.getStage();
     const mousePos = getMousePos(stage);
@@ -128,6 +149,7 @@ const Canvas = () => {
           height={size.height || 302}
           onMouseMove={handleMouseMove}
           onMouseDown={handleMouseDown}
+          ref={stageRef}
         >
           <Layer>
             <Image

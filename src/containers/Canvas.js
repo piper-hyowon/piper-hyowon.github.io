@@ -3,7 +3,8 @@ import PolygonAnnotation from "components/PolygonAnnotation";
 import { Stage, Layer, Image } from "react-konva";
 import Button from "components/Button";
 // const videoSource = "./space_landscape.jpg";
-const videoSource = "./mainImg.png"
+// const videoSource = "./mainImg.png"
+const videoSource = "./map_christmas.png";
 const wrapperStyle = {
   display: "flex",
   justifyContent: "center",
